@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shape Detection Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🧠 Shape Detection Lab</h1>
+    <p>Detect circles, triangles, rectangles, stars, and more — directly in your browser.</p>
+  </header>
+
+  <main>
+    <!-- Controls -->
+    <section class="controls">
+      <div class="file-controls">
+        <label class="file-input">
+          <input type="file" id="fileInput" accept="image/*">
+          <span>📤 Upload</span>
+        </label>
+
+        <select id="builtinSelect">
+          <option value="">Built-in test images</option>
+        </select>
+        <button id="loadBuiltin">Load</button>
+      </div>
+
+      <div class="buttons">
+        <button id="detectBtn">🧩 Detect</button>
+      </div>
+    </section>
+
+    <!-- Canvas area -->
+    <section class="canvas-container">
+      <canvas id="canvas"></canvas>
+    </section>
+
+    <!-- Results -->
+    <section class="results">
+      <h2>🧾 Detection Results</h2>
+      <pre id="resultsJson">{}</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created for <strong>Shape Detection Challenge</strong> | Powered by pure JavaScript ⚡</p>
+  </footer>
+
+  <script src="test-images.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

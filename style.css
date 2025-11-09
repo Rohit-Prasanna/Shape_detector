@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --accent: #38bdf8;
+  --bg: #0f172a;
+  --glass: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+header h1 {
+  font-size: 1.7em;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+header p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+main {
+  width: 95%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Control Panel */
+.controls {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.file-controls, .buttons, .switches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button, select, .file-input {
+  border: 1px solid var(--border);
+  background: var(--glass);
+  color: var(--text);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9em;
+}
+button:hover, select:hover, .file-input:hover {
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.file-input {
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+}
+.file-input input {
+  display: none;
+}
+
+/* Canvas */
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+canvas {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-width: 100%;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+}
+
+#canvas {
+  width: 100%;
+  height: auto;
+}
+
+.debug-panel {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.debug-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.debug-box h3 {
+  font-size: 0.9em;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Results */
+.results {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  word-wrap: break-word;
+}
+.results pre {
+  background: rgba(15, 23, 42, 0.5);
+  padding: 8px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 20px 0 30px;
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+/* ✅ Responsive layout for mobile */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4em;
+  }
+  header p {
+    font-size: 0.8em;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  .file-controls, .buttons {
+    flex-direction: column;
+  }
+
+  button, select, .file-input {
+    width: 100%;
+    font-size: 0.95em;
+  }
+
+  #canvas {
+    width: 100%;
+  }
+
+  .debug-panel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .results pre {
+    font-size: 0.8em;
+  }
+}
